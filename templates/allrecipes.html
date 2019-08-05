@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block nav %} {% include 'includes/_navbar.html' %} {% endblock %} {% block content %}
+<!-- Page Header -->
+
+<header class="masthead" style="background-image: url('https://gousto.gurucloud.co.uk/wp-content/uploads/2018/09/Curry-Club-Group-1.jpg')">
+    <div class="site-heading">
+        <h1>Here is a full view of every recipe on the site</h1>
+        <h2>Feel free to view anything you like the look of!</h2>
+</header>
+
+
+
+
+{% for recipe in recipies %}
+<label class="textOverImage" style="background-image:url({{recipe.recipe_image}})">
+              <h3>{{recipe.recipe_name}}</h3>
+
+ <div class="imgtxt">
+      <p>Meal Name:{{recipe.recipe_name}}</p>
+      <p>Diet Labels: {% for diet_labels in recipe.diet_labels %} {{ diet_labels }} {% endfor %}</p>  
+      <p>Cooking time:{{recipe.cooking_time}}</p>
+     <button type="button" id="btnview" class="btnview" onclick="window.location='{{url_for('show_recipe', recipe_id=recipe._id)}}'">View</button>
+
+            </div>
+
+            <div class="pagination">
+
+{{ loop.index}}
+{{ user }}
+
+ 
+ </div>
+
+</label>
+
+
+
+
+<!--end body of content-->
+
+<!--end of row/col-->
+{% endfor %} {{ pagination.links }} {% endblock %} {% block footer %} {% include 'includes/_footer.html' %} {% endblock %}

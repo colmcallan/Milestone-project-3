@@ -1,0 +1,58 @@
+{% extends 'base.html' %}  {% block nav %} {% include 'includes/_navbar.html' %} {% endblock %}
+{% block content %}
+<!-- Page Header -->
+
+<header class="masthead" style="background-image: url('https://gousto.gurucloud.co.uk/wp-content/uploads/2018/09/Curry-Club-Group-1.jpg')">
+    <div class="site-heading">
+        <h1>Everything you searched for and more!</h1>
+        <h2>Choose a recipe and try it!</h2>
+</header>
+{% for recipe in recipies %} {% if loop.index % 2 != 0 %}
+
+<div class="row featurette">
+    <div class="col-md-7 col-sm-4">
+        <h3>{{ loop.index }}. {{ recipe.recipe_name }}</h3>
+        <p>Description: {{ recipe.description }}</p>
+        <p>Health Labels: {% for health_labels in recipe.health_labels %} {{ health_labels }} {% endfor %}</p>
+        <p>Diet Labels: {% for diet_labels in recipe.diet_labels %} {{ diet_labels }} {% endfor %}</p>
+        <p>Cooking time:{{recipe.cooking_time}}</p>
+        <p>Calories: {{recipe.calories}}</p>
+        <button id="btnview" class="btn btn-secondary" onclick="window.location='{{url_for('show_recipe', recipe_id=recipe._id)}}'">View</button>
+
+    </div>
+    <div class="col-md-5">
+        <img class="featurette-image img-responsive" src="{{ recipe.recipe_image }}" alt="Picture of {{ recipe.recipe_name }}">
+    </div>
+</div>
+<hr>
+{% else %}
+<div class="row featurette">
+    <div class="col-md-5 col-sm-2">
+        <img class="featurette-image img-responsive" src="{{ recipe.recipe_image }}" alt="Picture of {{ recipe.recipe_name }}">
+    </div>
+    <div class="col-md-7">
+        <h3>{{ loop.index }}. {{ recipe.recipe_name }}</h3>
+        <p>Description: {{ recipe.description }}</p>
+        <p>Health Labels: {% for health_labels in recipe.health_labels %} {{ health_labels }} {% endfor %}</p>
+        <p>Diet Labels: {% for diet_labels in recipe.diet_labels %} {{ diet_labels }} {% endfor %}</p>
+        <p>Cooking time:{{recipe.cooking_time}}</p>
+        <p>Calories: {{recipe.calories}}</p>
+        <button id="btnview" class="btn btn-secondary" onclick="window.location='{{url_for('show_recipe', recipe_id=recipe._id)}}'">View</button>
+
+    </div>
+</div>
+<hr>
+{% endif %} {% if loop.index != 13 %}
+<div class="pagination">
+
+
+
+ </div>
+
+
+<!--end body of content-->
+
+<!--end of row/col-->
+{% endif %} {% endfor %}  {{ pagination.links }} {% endblock %} {% block footer %} {% include 'includes/_footer.html' %} {% endblock %}
+
+ 

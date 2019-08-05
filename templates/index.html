@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% include 'includes/_navbar.html' %} 
+{% block content %}
+
+<!-- Page Header -->
+
+<header class="masthead" style="background-image: url('https://gousto.gurucloud.co.uk/wp-content/uploads/2018/09/Curry-Club-Group-1.jpg')">
+    <div class="site-heading">
+        <h1>Cookbook Recipes</h1>
+        <h2>Welcome to your only place to find and share amazing recipes!<br> Feel free to add your own recipe to the webpage or edit an existing one! search for a dish!</h2>
+</header>
+<!-- Search form -->
+
+
+<!--body of content-->
+
+<hr class='hr-style'>
+<article>
+    <h3>Below you can search for a recipe by its type e.g "Pasta"</h3>
+    <p>This search will allow you to search for dishes based on type, like "burger" etc. however, if you wish, look at the browse all recipes link up top to view everything our users have created</p>
+
+
+</article>
+<section>
+
+    <!-- The form -->
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <form class="form-control" method="GET" action="/search" id="searchbar">
+                <div class="form-group">
+                    <input name="search_box" type="search" class="form-control" placeholder="Enter your search term" aria-label="Search term" aria-describedby="basic-addon" id="formsearch">
+                    <button type="submit" class="button">Search</button>
+                </div>
+        </div>
+        </form>
+        <br>
+
+        <br><br>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+
+            <h4>Do you have a recipe worth sharing with the rest of the world?</h4>
+            <p>Click the button below and add your recipe to the site for all to try and taste!</p>
+            <button type="button" class="buttonadd" id="btnaddrecip" onclick="window.location='{{url_for('add_meal')}}'">Add Recipe</button>
+        </div>
+    </div>
+</section>
+
+
+<!--end body of content-->
+
+<!--end of row/col-->
+{% endblock %} {% block footer %} {% include 'includes/_footer.html' %} {% endblock %}

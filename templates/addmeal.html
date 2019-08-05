@@ -1,0 +1,97 @@
+{% extends 'base.html' %} {% block nav %} {% include 'includes/_navbar.html' %} {% endblock %}
+{% block content %} 
+
+<div class="container" id="formaddmeal">
+    <h2 class='heading-styles'>Add Recipe</h2>
+    <hr class='hr-style'>
+    <div class="row" id="addmeal">
+        <form action='{{ url_for("insert_meal") }}' method='POST'>
+
+            <div class="form-group">
+                <label for="recipe">Recipe Type</label>
+                <input type="text" class="form-control" id="urname" placeholder="e.g 'pasta'" name="recipe" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="recipe_name">Recipe Name</label>
+                <input type="text" class="form-control" id="uname" placeholder="Please input the meal name here" name="recipe_name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Description</label>
+                <input type="text" class="form-control" id="description" placeholder="Please write out a brief description of the dish" name="description" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="recipe_image">Picture (add image URL)</label>
+                <input type="text" class="form-control" id="picture" placeholder="Please copy and paste the url for the dish here" name="recipe_image" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="serving_size">Serves (e.g 6)</label>
+                <input type="text" class="form-control" id="serving_size" placeholder="Please input the serving size info here" name="serving_size" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="calories">Calories</label>
+                <input type="text" class="form-control" id="calories" placeholder="Please input the number of calories here" name="calories" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="health_labels">Enter health labels </label>
+                <input type="text" class="form-control" id="health_labels" placeholder="E.g 'Peanut-Free'" name="health_labels" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="diet_labels">Enter Diet Labels </label>
+                <input type="text" class="form-control" id="diet_labels" placeholder="E.g 'Carb-Free'" name="diet_labels" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="cooking_time">Cooking Time (e.g 2hrs 15mins)</label>
+                <input type="text" class="form-control" id="cooking_time" placeholder="Please input the total time taken to cook and prepare the dish" name="cooking_time" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredients</label>
+                <textarea name="ingredients" id='ingredients' class='textarea' placeholder="Please input the ingredients here" required></textarea>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+
+            <button id="addmealbtn" type="submit" name="action"><i class="fa fa-plus-circle">Add Recipe</i>
+      </button>
+        </form>
+    </div>
+</div>
+<script>
+    // Disable form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Get the forms we want to add validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+{% endblock %}  {% block footer %} {% include 'includes/_footer.html' %} {% endblock %}

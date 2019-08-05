@@ -1,0 +1,17 @@
+{% extends 'base.html' %}  {% include 'includes/_navbar.html' %} 
+{% block content %}
+<header class="masthead" style="background-image: url('https://gousto.gurucloud.co.uk/wp-content/uploads/2018/09/Curry-Club-Group-1.jpg')">
+    <div class="site-heading">
+        <h1>Cookbook Recipes</h1>
+        <h2>Welcome future online chef!</h2>
+</header>
+<section>
+ <p class="loginpara">Please input a username to enter the website and begin your discovery of culinary genius,<br> open your pallete and embrace new tastes!<p>
+ </section>
+
+<form method="POST" class="loginbar">
+    <input type="text" class="username" id="username" placeholder="Input your username" name="username" width="400px">
+</form>
+<button type="button" class="btn btn-lg btn-success text-center" id="btnaddrecip" onclick="window.location='{{url_for('get_meals')}}'">login!</button>
+{% endblock %} 
+{% block footer %} {% include 'includes/_footer.html' %} {% endblock %}

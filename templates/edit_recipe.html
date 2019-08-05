@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% include 'includes/_navbar.html' %}
+{% block content %}
+
+<div class="container" id="foreditmeal">
+    <h2 class='heading-styles'>Edit Recipe</h2>
+    <hr class='hr-style'>
+    <div class="row" id="addmeal">
+        <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method='POST'>
+
+            <div class="form-group">
+                <label for="recipe">Recipe Type</label>
+                <input type="text" class="form-control" id="recipe" placeholder="e.g 'pasta'" name="recipe" value="{{recipe.recipe}}" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="recipe_name">Recipe Name</label>
+                <input type="text" class="form-control" id="recipe_name" placeholder="Please input the meal name here" name="recipe_name" value="{{recipe.recipe_name}}" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Description</label>
+                <input type="text" class="form-control" id="description" placeholder="Please write out a brief description of the dish" name="description" value="{{recipe.description}}" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="recipe_image">Picture (add image URL)</label>
+                <input type="text" class="form-control" id="recipe_image" placeholder="Please copy and paste the url for the dish here" name="recipe_image" value="{{recipe.recipe_image}}" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="serving_size">Serves (e.g 6)</label>
+                <input type="text" class="form-control" id="serving_size" placeholder="Please input the serving size info here" name="serving_size" value="{{recipe.serving_size}}" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="calories">Calories</label>
+                <input type="text" class="form-control" id="calories" placeholder="Please input the number of calories here" name="calories" value="{{recipe.calories}}" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="health_labels">Enter health labels </label>
+                <input type="text" class="form-control" id="health_labels" placeholder="E.g 'Peanut-Free'" name="health_labels" value="{% for health_labels in recipe.health_labels %} {{ health_labels }} {% endfor %}" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="diet_labels">Enter Diet Labels </label>
+                <input type="text" class="form-control" id="diet_labels" placeholder="E.g 'Carb-Free'" name="diet_labels" value="{% for diet_labels in recipe.diet_labels %} {{ diet_labels }} {% endfor %}" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="cooking_time">Cooking Time (e.g 2hrs 15mins)</label>
+                <input type="text" class="form-control" id="cooking_time" placeholder="Please input the total time taken to cook and prepare the dish" name="cooking_time" value="{{recipe.cooking_time}}" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredients</label>
+                <textarea name="ingredients" id='method' class='textarea' placeholder="{% for ingredients in recipe.ingredients %} {{ ingredients  }} {% endfor %}" required></textarea>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+           
+
+            <button id="addmealbtn" type="submit" name="action"><i class="fa fa-plus-circle">Edit Recipe</i>
+      </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %} {% block footer %} {% include 'includes/_footer.html' %} {% endblock %}

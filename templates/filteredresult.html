@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% include 'includes/_navbar.html' %} 
+{% block content %}
+
+
+
+
+<!-- Page Layout here -->
+<main class="row">
+    <div class="col s12 m3 hide-on-small-only">
+        <ul class="collapsible">
+            <li class="active">
+                <div class="collapsible-header">Diet Labels<i class="material-icons dropdown-icon">arrow_drop_down</i></div>
+                <div class="collapsible-body">
+                    <form method="POST" action="{{ url_for('filtered') }}">
+                        <select multiple name="recipe.diet_labels">
+                              <option value="" disabled selected>Choose your options</option>
+                              <option value="Low-Carb">Low-Carb</option>
+                              <option value="Fat-Free">Fat-Free</option>
+                              <option value="Gluten-Free">Gluten-Free</option>
+                              <option value="High-Protein">High-Protein</option>
+                              <option value="Balanced">Balanced</option>
+                            </select>
+                        <button class="btn waves-effect waves-light filter-btn" type="submit">Submit</button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+
+        <ul class="collapsible">
+            <li class="active">
+                <div class="collapsible-header">Health Labels<i class="material-icons dropdown-icon">arrow_drop_down</i></div>
+                <div class="collapsible-body">
+                    <form method="POST" action="{{ url_for('filtered') }}">
+                        <select multiple name="health_labels">
+                              <option value="" disabled selected>Choose your options</option>
+                              <option value="Sugar-Conscious">Sugar-Conscious</option>
+                              <option value="Peanut-Free">Peanut-Free</option>
+                              <option value="Tree-Nut-Free">Tree-Nut-Free</option>
+                              <option value="Alcohol-Free">Alcohol-Free</option>
+                              <option value="Vegan">Vegan</option>
+                              <option value="Vegetarian">Vegetarian</option>
+                            </select>
+                        <button class="btn waves-effect waves-light filter-btn" type="submit">Submit</button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col m9">
+        {% if total_results == 0 %}
+        <h4 class="heading">Sorry no results found</h4>
+        {% else %} {% for r in results %} {% for recipe in recipies %}
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <a href="#" target="_">
+          <img src="{{recipe.recipe_image}}" alt="recipe" style="width:100%">
+          <div class="caption">
+              <h2>{{recipe.recipe_name}}</h2>
+              <p>Diet Labels:{{recipe.diet_labels}}</p>
+      <p>Cooking time:{{recipe.cooking_time}}</p>
+              </div>
+        </a>
+            </div>
+        </div>
+        <button id="btnview" class="btn btn-secondary" onclick="window.location='{{url_for('show_recipe', recipe_id=recipe._id)}}'">View</button>
+    </div>
+    <div class="pagination">
+
+        {{ loop.index}}
+
+
+    </div>
+    {% endfor %} {% endfor %} {% endif %}
+    <!-- end of col-9 -->
+    </div>
+    <!-- end of row -->
+</main>
+{% endblock %}  {% block footer %} {% include 'includes/_footer.html' %} {% endblock %}
