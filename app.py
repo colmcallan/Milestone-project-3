@@ -7,14 +7,14 @@ from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from flask import (Flask, render_template, redirect,
                    request, url_for, flash, session)
+
 app = Flask(__name__)
 recipies = list(range(100))
 # connecting to the database
 
-MONGODB_URI = os.getenv("MONGO_URI")
-DBS_NAME = "Myfirstcluster"
-COLLECTION = "cookbook_creation"
-app.secret_key = os.getenv("SECRET", "randomstring123")
+app.config["MONGO_DBNAME"] = "cookbook_creation"
+app.config["MONGO_URI"] = os.getenv("MONGO_URI", "monogodb://localhost")
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
 mongo = PyMongo(app)
 
@@ -158,6 +158,6 @@ def store():
     return render_template('store.html')
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'), 
+    app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)
