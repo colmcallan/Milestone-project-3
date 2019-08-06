@@ -32,24 +32,16 @@
     <!-- fontawesome 5.10.0 core JavaScript -->
     <script src="https://kit.fontawesome.com/572952883f.js"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="{{ url_for('static', filename='static/js/cart.js') }}"></script>
-    <script src="{{ url_for('static', filename='static/js/script.js') }}"></script>
-
+   
     <script>
-        $(document).ready(function() {
-            $("#{{request.endpoint}}").addClass("active");
-        })
-
-        $(document).ready(function() {
-            var sideslider = $('[data-toggle=collapse-side]');
-            var sel = sideslider.attr('data-target');
-            var sel2 = sideslider.attr('data-target-2');
-            sideslider.click(function(event) {
-                $(sel).toggleClass('in');
-                $(sel2).toggleClass('out');
-            });
-        });
+      function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
     </script>
 </body>
 
