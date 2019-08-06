@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="ua-windows_nt ua-windows_nt-10 ua-windows_nt-10-0 ua-chrome ua-chrome-75 ua-chrome-75-0 ua-chrome-75-0-3770 ua-chrome-75-0-3770-142 ua-desktop ua-desktop-windows ua-webkit ua-webkit-537 ua-webkit-537-36 js">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
 
@@ -16,16 +18,16 @@
 </head>
 
 <body>
-   <!-- Main Content -->
+    <!-- Main Content -->
 
-    
+
     {% block nav %} {% endblock %} {% block content %} {% endblock %} {% block footer %} {% endblock %}
 
-        
-    <!-- Bootstrap core JavaScript -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 
     <!-- fontawesome 5.10.0 core JavaScript -->
     <script src="https://kit.fontawesome.com/572952883f.js"></script>
@@ -34,7 +36,21 @@
     <script src="{{ url_for('static', filename='static/js/cart.js') }}"></script>
     <script src="{{ url_for('static', filename='static/js/script.js') }}"></script>
 
+    <script>
+        $(document).ready(function() {
+            $("#{{request.endpoint}}").addClass("active");
+        })
 
+        $(document).ready(function() {
+            var sideslider = $('[data-toggle=collapse-side]');
+            var sel = sideslider.attr('data-target');
+            var sel2 = sideslider.attr('data-target-2');
+            sideslider.click(function(event) {
+                $(sel).toggleClass('in');
+                $(sel2).toggleClass('out');
+            });
+        });
+    </script>
 </body>
 
 </html>

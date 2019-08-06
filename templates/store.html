@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block nav %} {% include 'includes/_navbar.html' %}
+{% extends 'base.html' %} {% block nav %} {% include 'includes/_navbar.html' %} {% endblock %}
 {% block content %}
 
 <section class="container content-section">
@@ -10,7 +10,7 @@
             <br>
             <div class="shop-item-details">
                 <span class="shop-item-price">€99.99</span>
-                <button class="btn btn-primary shop-item-button" type="button">SOLD OUT</button>
+                <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
             </div>
         </div>
         <div class="shop-item">
@@ -31,15 +31,7 @@
                 <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
             </div>
         </div>
-        <div class="shop-item">
-            <span class="shop-item-title">Album 4</span>
-            <img class="shop-item-image" src="Images/Album 4.png">
-            <br>
-            <div class="shop-item-details">
-                <span class="shop-item-price">$19.99</span>
-                <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-            </div>
-        </div>
+        
     </div>
 </section>
 <section class="container content-section">
@@ -51,7 +43,7 @@
             <br>
             <div class="shop-item-details">
                 <span class="shop-item-price">€19.99</span>
-                <button class="btn btn-primary shop-item-button" type="button">SOLD OUT</button>
+                <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
             </div>
         </div>
         <div class="shop-item">
@@ -60,7 +52,7 @@
             <br>
             <div class="shop-item-details">
                 <span class="shop-item-price">€6.99</span>
-                <button class="btn btn-primary shop-item-button" type="button">SOLD OUT</button>
+                <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
             </div>
         </div>
     </div>
@@ -177,12 +169,12 @@ function updateCartTotal() {
         var cartRow = cartRows[i]
         var priceElement = cartRow.getElementsByClassName('cart-price')[0]
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-        var price = parseFloat(priceElement.innerText.replace('$', ''))
+        var price = parseFloat(priceElement.innerText.replace('€', ''))
         var quantity = quantityElement.value
         total = total + (price * quantity)
     }
     total = Math.round(total * 100) / 100
-    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+    document.getElementsByClassName('cart-total-price')[0].innerText = '€' + total
 }
 </script>
 {% endblock %} {% block footer %} {% include 'includes/_footer.html' %}  {% endblock %}

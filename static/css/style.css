@@ -3,7 +3,9 @@ body {
   font-family: 'Indie Flower', cursive;
   text-align: center;
   background-color: #ebdbcd;
+
 }
+
 
 .hr {
   color: #a52900;
@@ -593,6 +595,7 @@ h6 {
   flex-basis: auto;
 }
 
+/*End nav*?
 /*header*/
 
 header.masthead {
@@ -634,6 +637,7 @@ header.masthead {
     font-size: 40px;
     margin-top: 0;
   }
+ 
 }
 
 @media only screen and (min-width: 768px) {
@@ -1057,4 +1061,13 @@ input[type=text] {
 
 .pagination li.active {
   background-color: #2e62af;
+}
+
+
+
+    @media (min-width: 768px) {
+    nav
+    {
+        visibility:visible;
+    }
 }

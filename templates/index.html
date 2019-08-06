@@ -3,13 +3,13 @@
 
 <!-- Page Header -->
 
-<header class="masthead" style="background-image: url('https://gousto.gurucloud.co.uk/wp-content/uploads/2018/09/Curry-Club-Group-1.jpg')">
+
+<header class="masthead" style="background-image: url('https://gousto.gurucloud.co.uk/wp-content/uploads/2018/09/Curry-Club-Group-1.jpg') ">
     <div class="site-heading">
         <h1>Cookbook Recipes</h1>
         <h2>Welcome to your only place to find and share amazing recipes!<br> Feel free to add your own recipe to the webpage or edit an existing one! search for a dish!</h2>
 </header>
-<!-- Search form -->
-
+<!--end of header-->
 
 <!--body of content-->
 
@@ -20,10 +20,9 @@
 
 
 </article>
-<section>
 
-    <!-- The form -->
-
+<!-- Search form -->
+<main class="col bg-faded py-3">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <form class="form-control" method="GET" action="/search" id="searchbar">
@@ -32,18 +31,20 @@
                     <button type="submit" class="button">Search</button>
                 </div>
         </div>
-        </form>
+        </form> 
+        <!-- end of search-->
         <br>
 
         <br><br>
+        <!--button to add recipe-->
         <div class="col-lg-12 col-md-12 col-sm-12">
 
             <h4>Do you have a recipe worth sharing with the rest of the world?</h4>
             <p>Click the button below and add your recipe to the site for all to try and taste!</p>
             <button type="button" class="buttonadd" id="btnaddrecip" onclick="window.location='{{url_for('add_meal')}}'">Add Recipe</button>
-        </div>
+        </div><!--end of add recipe-->
     </div>
-</section>
+</main>
 
 
 <!--end body of content-->
