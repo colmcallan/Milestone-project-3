@@ -7,7 +7,6 @@ from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from flask import (Flask, render_template, redirect,
                    request, url_for, flash, session)
-
 app = Flask(__name__)
 recipies = list(range(100))
 # connecting to the database
@@ -95,8 +94,7 @@ def add_meal():
 # route back to index           
 @app.route('/get_meals')
 def get_meals():
-    return render_template('index.html',
-                            all_recipes = mongo.db.all_recipes.find())
+    return render_template('index.html')
 
 # function to add recipes to the website                            
 
@@ -158,6 +156,6 @@ def store():
     return render_template('store.html')
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
+    app.run(host=os.environ.get('IP'), 
             port=int(os.environ.get('PORT')),
             debug=False)
