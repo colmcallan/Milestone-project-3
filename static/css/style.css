@@ -810,6 +810,11 @@ footer .copyright {
   padding: 20px;
   display: -webkit-inline-box;
 }
+@media only screen and (max-width: 425px){
+.featurette {
+    display: block;
+}
+}
 
 /*form add meal*/
 
