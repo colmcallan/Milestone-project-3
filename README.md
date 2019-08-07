@@ -114,7 +114,7 @@ After I made a route so that  users could view a single recipe alone. I took the
 Testing the update recipes route was a case of trying the update.all method and applying this to a route that allowed the user to update the record based on some input by the user posting by the update recipe form. Upon a successful edit I would check in the single recipe view and by printing the entire recipe to the terminal that all user edited fields have updated.
 
 **DELETE**
-Testing the delete function in my app was a case of creating the route and then testing that route within the browser, I would grab a recipe ID and then enter the URL needed for that route to perform. After deleting a record, I would flash a message for the user to be notified and also print a message to the terminal. To ensure the recipe was delete I would check in my view all recipes page along with checking the mLab website. 
+Testing the delete function in my app was a case of creating the route and then testing that route within the browser, I would grab a recipe ID and then enter the URL needed for that route to perform. After deleting a record, I would flash a message for the user to be notified and also print a message to the terminal. To ensure the recipe was delete I would check in my view all recipes page along with checking the Atlas website. 
 
 **CREATE**
 To test my create functionality of my app I would continuously fill out a recipe form and test that the route when posting create a new recipe within my recipe collection and that all the fields I needed were created successfully.
