@@ -17,9 +17,9 @@ The site is fully responsive and easy to navigate throughout.
 
 ---
 ## Wireframes 
-[Desktop View](https://raw.githubusercontent.com/ShaneMuir/Milestone-4/master/wireframes/Cookbook%20Desktop%20homepage.png)
-[Tablet View](https://raw.githubusercontent.com/ShaneMuir/Milestone-4/master/wireframes/Cookbook%20Tablet%20homepage.png)
-[Mobile View](https://raw.githubusercontent.com/ShaneMuir/Milestone-4/master/wireframes/Cookbook%20Mobile.png)
+[Desktop View]()
+[Tablet View]()
+[Mobile View]()
 
 ---
 ### Database Schema
