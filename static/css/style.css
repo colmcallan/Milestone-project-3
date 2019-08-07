@@ -171,8 +171,8 @@ input[type=text] {
   margin: auto;
 }
 
-.form-control{
-  
+.form-control {
+
   display: block;
   width: 100%;
   height: calc(1.5em + .75rem + 2px);
@@ -188,6 +188,7 @@ input[type=text] {
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
 }
+
 @media only screen and (max-width: 425px) {
   .form-control {
     display: block;
@@ -643,6 +644,13 @@ footer .copyright {
 
 
 /* shop css */
+
+#storehead {
+  color: black;
+  font-size: 30px;
+  text-decoration: underline;
+
+}
 
 .shop-item {
   margin: 30px;

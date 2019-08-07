@@ -9,10 +9,17 @@
 </header>
 
 
+<section>
+    <br>
+    <br>
+    <h3>Are you fully equipped to be cooking any of the below recipes or your own?</h3>
+    <p>No? <a href="{{url_for('store')}}">check out what we have on offer!!!!</a></p>
+    
+    <hr>
 
 
-{% for recipe in recipies %}
-<label class="textOverImage" style="background-image:url({{recipe.recipe_image}})">
+    {% for recipe in recipies %}
+    <label class="textOverImage" style="background-image:url({{recipe.recipe_image}})">
               <h3>{{recipe.recipe_name}}</h3>
 
  <div class="imgtxt">
@@ -34,7 +41,7 @@
 </label>
 
 
-
+</section>
 
 <!--end body of content-->
 
