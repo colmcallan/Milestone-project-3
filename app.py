@@ -52,7 +52,7 @@ def user(username):
 @app.route('/all_view')
 def all_view():
     page = int(request.args.get('page', 1))
-    per_page = 5
+    per_page = 10
     offset = (page - 1) * per_page
     paginated_recipies = get_recipies(offset=offset, per_page=per_page)
     total=paginated_recipies.count()
