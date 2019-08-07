@@ -17,9 +17,7 @@ The site is fully responsive and easy to navigate throughout.
 
 ---
 ## Wireframes 
-[Desktop View]()
-[Tablet View]()
-[Mobile View]()
+[Desktop View](https://github.com/colmcallan/Milestone-project-3/tree/master/static/images/wireframes/desktop)
 
 ---
 ### Database Schema
@@ -27,7 +25,8 @@ Before I started the core development of my project, I began working on how i wa
 
 ---
 ## Cookbooks Functionality
-The app's main functionality is that it is capable of communicating to a dedicated document-based database running on atlas using MongoDB. By using Python/Flask alongside Mongo I have been able to create an application that stores  recipe data inputted by anyone. 
+The app's main functionality is that it is capable of communicating to a dedicated document-based database running on atlas using MongoDB.
+By using Python/Flask alongside Mongo I have been able to create an application that stores recipe data inputted by anyone. 
 
 My application is scalable and responsive meaning it will perform well on any device it's loaded on. 
 
@@ -60,11 +59,11 @@ All my recipe data was source from [**Edam**](https://developer.edamam.com/edama
 
 - Secured user log in/registration for users and lock content in terms of who can edit and delete recipes. As i haven't had any expoosure to this functionality I wasn't capable of implementing it.
 
-- Logging vital system info and app info upon crashes or 404's, by this I mean we could find out what request.path they was on for 404's or for system error we could have the debug report be logged to a file and send to the site admin so that any system errors can be captured 
+- A fully working shopping cart for items to be purchased by users. 
 
-- AJAX functionality on the front-end.
+- Like buttons if a user (if registered) likes the recipes and add this as a filter option.
 
-##### Why I built 'Recipe Manager | Cookbook'
+##### Why I built 'CookBook | Cookbook Website'
 
 The main reasoning behind the project was inspired by Code Institute as the brief was to create a cookbook type project. 
 ---
@@ -168,11 +167,6 @@ All my HTML and CSS is valid, checked with the following validators
 - [HTML Validator](https://validator.w3.org/)
 -  [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
-#### Website Performance
-Through the entirety of my project website performance is at the forefront of my mind. mark-up has been optimized for website performance along with CSS/JS. All images have been compressed. As the project is on Heroku the server cannot be optimized.
-
----
-
 ## Deployment 
 Getting my application ready for deployment consisted of the following: - 
 1. Removing all my hard-coded environment variables to project my keys and secrets. These were placed in the heroku Config Vars for production.
@@ -226,7 +220,5 @@ Credit is due to the following names. I would like to thank each and every one w
 
 - Mentor **Guido Cecilio Garcia**
 - Youtuber **Pretty Printed**
-- Slack Users **ShaneMuir, Seán**
-- Flask Megua Tutorial creator **Miguel Grinberg**
 - Friends who helped functionality and code review **Wesley Redmond**, **Conor Fitzsimons**
 
