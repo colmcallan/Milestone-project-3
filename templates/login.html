@@ -11,7 +11,8 @@
 
 <form method="POST" class="loginbar">
     <input type="text" class="username" id="username" placeholder="Input your username" name="username" width="400px">
+<button type="button"  id="btnlogin" onclick="window.location='{{url_for('get_meals')}}'">login!</button>
+
 </form>
-<button type="button" class="btn btn-lg btn-success text-center" id="btnaddrecip" onclick="window.location='{{url_for('get_meals')}}'">login!</button>
 {% endblock %} 
 {% block footer %} {% include 'includes/_footer.html' %} {% endblock %}

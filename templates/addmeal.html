@@ -5,6 +5,7 @@
     <h2 class='heading-styles'>Add Recipe</h2>
     <hr class='hr-style'>
     <div class="row" id="addmeal">
+        <!-- begin form for adding meal-->
         <form action='{{ url_for("insert_meal") }}' method='POST'>
 
             <div class="form-group">
@@ -71,7 +72,7 @@
 
             <button id="addmealbtn" type="submit" name="action"><i class="fa fa-plus-circle">Add Recipe</i>
       </button>
-        </form>
+        </form> <!-- begin form for adding meal-->
     </div>
 </div>
 <script>

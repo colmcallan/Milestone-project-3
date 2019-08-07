@@ -7,7 +7,7 @@
         <h1>Everything you searched for and more!</h1>
         <h2>Choose a recipe and try it!</h2>
 </header>
-{% for recipe in recipies %} {% if loop.index % 2 != 0 %}
+{% for recipe in recipies %} {% if loop.index % 2 != 0 %} <!--loops results on page -->
 
 <div class="row featurette">
     <div class="col-md-7 col-sm-4">
@@ -43,7 +43,7 @@
 </div>
 <hr>
 {% endif %} {% if loop.index != 13 %}
-<div class="pagination">
+<div class="pagination"> <!--paginate results so doesn't clutter screen-->
 
 
 
